@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>鲜仓 · 库存与效期管理</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳转到主要内容</a>
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><img src="/favicon.svg" width="38" height="38" alt=""><span>鲜仓<small>FRESH STOCK</small></span></a>
+    <div class="workspace"><span class="warehouse-icon" aria-hidden="true">仓</span><div>生鲜运营工作台<small>本地仓库 · 单仓管理</small></div></div>
+    <nav aria-label="主要导航" id="nav"></nav>
+    <div class="sidebar-bottom"><span class="pill" id="mode">正在连接</span><p>从到货到出库<br>每一批库存，都有记录。</p><a href="/api/backup" class="backup">下载数据库备份 ↗</a></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><span>仓储运营 / <strong id="breadcrumb">运营概览</strong></span><div class="top-right"><span id="date"></span><span class="avatar" aria-label="本地操作员">仓</span></div></header>
+    <main id="main" tabindex="-1">
+      <div class="page-heading"><div><h1 id="title">运营概览</h1><p id="subtitle">正在读取库存数据…</p></div><div class="actions"><button id="refresh" class="button secondary">刷新</button><button id="receive" class="button primary" disabled>＋ 新建入库</button></div></div>
+      <div id="notice" role="status" aria-live="polite" hidden></div>
+      <div id="error" class="error-panel" role="alert" hidden></div>
+      <div id="content" aria-busy="true"><div class="loading">正在连接本地仓库…</div></div>
+      <footer><span>鲜仓 · 库存与效期管理</span><span>日期按北京时间计算 · 数量支持 3 位小数</span></footer>
+    </main>
+  </div>
+  <dialog id="dialog" aria-labelledby="dialog-title"><form id="form">
+    <div class="dialog-heading"><div><p class="dialog-kicker">仓库作业</p><h2 id="dialog-title"></h2></div><button type="button" class="icon-button" id="close" aria-label="关闭表单">×</button></div>
+    <p id="dialog-help" class="muted"></p><div id="fields" class="form-grid"></div>
+    <div id="form-error" class="form-error" role="alert" tabindex="-1" hidden></div>
+    <div class="dialog-footer"><button type="button" class="button secondary" id="cancel">取消</button><button type="submit" class="button primary" id="submit">确认保存</button></div>
+  </form></dialog>
+</body></html>

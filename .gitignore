@@ -1,0 +1,10 @@
+data/
+__pycache__/
+*.pyc
+test-results/
+*.log
+.hallmark/
+.env
+.env.*
+*.db
+*.db-*
